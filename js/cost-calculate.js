@@ -11,6 +11,11 @@ document.getElementById('calculate_button').addEventListener('click', function (
     total_cost.innerText = total_monthly_expense + total_cost_price;
     // console.log(total_cost);
 
-
-
+    let balance_total = document.getElementById('balance');
+    let balance_price = parseFloat(balance_total.innerText);
+    balance_price = 0;
+    const income_total = parseFloat(document.getElementById('income').value);
+    const newBalance = income_total - total_monthly_expense;
+    balance_total.innerText = balance_price + newBalance;
+    // console.log(newBalance);
 })
