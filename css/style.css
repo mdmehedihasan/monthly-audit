@@ -1,9 +1,14 @@
+/* all body background */
 body{
     background-color: #f2f2f2;
 }
+
+/* notification message display hide css */
 #notification_message{
     display: none;
 }
+
+/* notification fail div */
 
 #notification_fail{
     background-color:white;
