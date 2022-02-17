@@ -16,33 +16,35 @@
 <body>
     <!-- header part -->
     <header class="container">
-        <h1 class="text-center">Monthly Audit 🔒🗃🔒</h1>
+        <h1 class="text-center my-5">Monthly Audit 🔒🗃🔒</h1>
     </header>
     <main>
+        <!-- left part with image -->
         <div class="container">
             <!-- left part of the section -->
-            <div class="row bg-primary p-2">
-                <div class="col-sm-8 bg-primary">
-                    <img class="img-fluid" src="images/monthly_audit.jpg" alt="">
+            <div class="row p-2 img_bg">
+                <div class="col-sm-7">
+                    <img class="img-fluid" height="100%" src="images/monthly_audit.jpg" alt="">
                 </div>
 
                 <!-- right part of the section -->
-                <div class="col-sm-4 bg-warning">
+                <div class="col-sm-5 bg-warning">
                     <h3 class="text-center">Income</h3>
 
                     <!-- income field -->
                     <div class="row">
-                        <div class="col-sm-4 text-end fs-5">
+                        <div class="col-lg-4   fs-5">
                             <p>Income:</p>
                         </div>
-                        <div class=" col-sm-8"><input id="income" value="0" type="number" placeholder="10000"></div>
+                        <div class="col-lg-8 "><input id="income" value="0" type="number" placeholder="10000">
+                        </div>
                     </div>
 
                     <h3 class="text-center">Expenses</h3>
 
                     <!-- food expense field -->
                     <div class="row">
-                        <div class="col-sm-4 text-end fs-5">
+                        <div class="col-sm-4  fs-5">
                             <p>Food:</p>
                         </div>
                         <div class=" col-sm-8"><input value="0" type="number" id="food_expense" placeholder="3000">
@@ -51,7 +53,7 @@
 
                     <!-- rent expense field -->
                     <div class="row">
-                        <div class="col-sm-4 text-end fs-5">
+                        <div class="col-sm-4  fs-5">
                             <p>Rent:</p>
                         </div>
                         <div class=" col-sm-8"><input value="0" type="number" id="rent_expense" placeholder="2000">
@@ -60,7 +62,7 @@
 
                     <!-- clothes expense field -->
                     <div class="row">
-                        <div class="col-sm-4 text-end fs-5">
+                        <div class="col-sm-4  fs-5">
                             <p>Clothes:</p>
                         </div>
                         <div class=" col-sm-8"><input value="0" type="number" id="clothes_expense" placeholder="500">
@@ -88,9 +90,9 @@
                         </p>
                     </div>
 
-                    <div class="row">
-                        <p class="fs-5">Save: <input id="save_input" class="p-1 mx-2" type="number" value="20">% <button
-                                id="save_button" type="button" class="btn btn-primary">Save</button>
+                    <div>
+                        <p class="fs-5 ">Save: <input id="save_input" class="p-1 saving_input" type="number" value="2">%
+                            <button id="save_button" type="button" class="btn btn-primary">Save</button>
                         </p>
                     </div>
 
@@ -99,9 +101,8 @@
                         <p class="fs-5 fw-bold text-center mb-3">Rmaining Balance:<span id="remaining_balance">0</span>
                         </p>
                     </div>
-
-
                 </div>
+
             </div>
     </main>
     <footer>

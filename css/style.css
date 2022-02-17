@@ -17,3 +17,10 @@ body{
     font-size: 15px;
     font-weight: 400;
 }
+
+.img_bg{
+    background-color: #c55339;
+}
+.saving_input{
+    width: 90px;
+}
