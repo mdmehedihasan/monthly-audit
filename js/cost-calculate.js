@@ -1,6 +1,9 @@
 //per item cost function
 function monthly_cost(item_name) {
     const item_cost = parseFloat(document.getElementById(item_name + '_expense').value);
+    if (item_cost < 0) {
+        return alert('Please put a positive value in ' + item_name + ' field');
+    }
     return item_cost;
 }
 
