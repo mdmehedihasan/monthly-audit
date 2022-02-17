@@ -43,4 +43,10 @@ document.getElementById('save_button').addEventListener('click', function () {
     let saving_amount_total = parseFloat(saving_amount_balance.innerText);
     saving_amount_balance.innerText = percentage;
 
+    //remaining balance
+    const remaining_amount = document.getElementById('remaining_balance');
+    const remaining_amount_balance = parseFloat(remaining_amount.innerText);
+
+    //where to show remaining balance
+    remaining_amount.innerText = balance_price - percentage;
 })
