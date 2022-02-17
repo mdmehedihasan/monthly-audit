@@ -10,7 +10,6 @@ function total_balance(total_monthly_expense) {
     const income_total = parseFloat(document.getElementById('income').value);
     const newBalance = income_total - get_total_monthly_expense;
     return newBalance;
-    //balance_total.innerText = balance_price + newBalance;
 }
 document.getElementById('calculate_button').addEventListener('click', function () {
     const food_monthly_expense = monthly_cost('food');
@@ -21,16 +20,15 @@ document.getElementById('calculate_button').addEventListener('click', function (
     //total cost 
     let total_cost = document.getElementById('total_expense');
     let total_cost_price = parseFloat(total_cost.innerText);
-    total_cost_price = 0;
-    total_cost.innerText = total_monthly_expense + total_cost_price;
+    total_cost.innerText = total_monthly_expense;
 
-    // total balance
+    // total balance function call
     const all_total_balance = total_balance(total_monthly_expense);
+
+    //where to show balance
     let balance_total = document.getElementById('balance');
     let balance_price = parseFloat(balance_total.innerText);
-    balance_price = 0;
-    //where to show balance
-    balance_total.innerText = balance_price + all_total_balance;
+    balance_total.innerText = all_total_balance;
 })
 //percentage
 document.getElementById('save_button').addEventListener('click', function () {
@@ -44,6 +42,5 @@ document.getElementById('save_button').addEventListener('click', function () {
     let saving_amount_balance = document.getElementById('saving_amount');
     let saving_amount_total = parseFloat(saving_amount_balance.innerText);
     saving_amount_balance.innerText = percentage;
-
 
 })
