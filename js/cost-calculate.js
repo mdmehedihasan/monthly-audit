@@ -1,41 +1,51 @@
 //per item cost function
 function monthly_cost(item_name) {
     const item_cost = parseFloat(document.getElementById(item_name + '_expense').value);
-    if (item_cost < 0) {
-        return alert('Please put a positive value in ' + item_name + ' field');
-    }
     return item_cost;
 }
 
 //total balance 
 function total_balance(total_monthly_expense) {
     const income_total = parseFloat(document.getElementById('income').value);
-    //error handle for negative input of Income
     const newBalance = income_total - total_monthly_expense;
     return newBalance;
 }
+
+
 document.getElementById('calculate_button').addEventListener('click', function () {
     const food_monthly_expense = monthly_cost('food');
+    if (food_monthly_expense < 0) {
+        return alert('Please put a positive value in Food Field ');
+    }
     const rent_monthly_expense = monthly_cost('rent')
+    if (rent_monthly_expense < 0) {
+        return alert('Please put a positive value in Rent Field');
+    }
     const clothes_monthly_expense = monthly_cost('clothes');
+    if (clothes_monthly_expense < 0) {
+        return alert('Please put a positive value in Clothes Field');
+    }
     const total_monthly_expense = food_monthly_expense + rent_monthly_expense + clothes_monthly_expense;
 
     // total balance function call
     const all_total_balance = total_balance(total_monthly_expense);
     //negative income error handle
-    if (all_total_balance < 0) {
+    const income_total = parseFloat(document.getElementById('income').value);
+    if (income_total == 0) {
+        return alert('Your Input Salary Field is Blank. ');
+    }
+    if (income_total < 0) {
         return alert('Salary is less than 0');
     }
+
     if (total_monthly_expense > all_total_balance) {
         document.getElementById('notification_message').style.display = 'block';
         return alert('Salary is less than cost');
     }
 
-
     //total cost 
     let total_cost = document.getElementById('total_expense');
     let total_cost_price = parseFloat(total_cost.innerText);
-
 
     let balance_total = document.getElementById('balance');
     let balance_price = parseFloat(balance_total.innerText);
