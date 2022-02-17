@@ -36,16 +36,16 @@ document.getElementById('calculate_button').addEventListener('click', function (
     //negative income error handle
     const income_total = parseFloat(document.getElementById('income').value);
     if (income_total == 0) {
-        return alert('Your Input Salary Field is Blank. ');
+        return alert('Your Income Field is Blank. ');
     }
     if (income_total < 0) {
-        return alert('Salary is less than 0');
+        return alert('Income is less than 0');
     }
 
     //total balance is less than the cost error handle
     if (total_monthly_expense > all_total_balance) {
         document.getElementById('notification_message').style.display = 'block';
-        return alert('Salary is less than cost');
+        return alert('Income is less than cost');
     }
 
     //total cost 
