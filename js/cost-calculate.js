@@ -1,7 +1,14 @@
+//per item cost function
+function monthly_cost(item_name) {
+    const item_cost = parseFloat(document.getElementById(item_name + '_expense').value);
+    return item_cost;
+}
+
+
 document.getElementById('calculate_button').addEventListener('click', function () {
-    const food_monthly_expense = parseFloat(document.getElementById('food_expense').value);
-    const rent_monthly_expense = parseFloat(document.getElementById('rent_expense').value);
-    const clothes_monthly_expense = parseFloat(document.getElementById('clothes_expense').value);
+    const food_monthly_expense = monthly_cost('food');
+    const rent_monthly_expense = monthly_cost('rent')
+    const clothes_monthly_expense = monthly_cost('clothes');
     const total_monthly_expense = food_monthly_expense + rent_monthly_expense + clothes_monthly_expense;
     // console.log(total_monthly_expense);
 
@@ -18,4 +25,8 @@ document.getElementById('calculate_button').addEventListener('click', function (
     const newBalance = income_total - total_monthly_expense;
     balance_total.innerText = balance_price + newBalance;
     // console.log(newBalance);
+})
+//percentage
+document.getElementById('save_button').addEventListener('click', function () {
+    console.log('save button clicked');
 })
