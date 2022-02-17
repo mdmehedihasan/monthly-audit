@@ -9,9 +9,9 @@ function monthly_cost(item_name) {
 
 //total balance 
 function total_balance(total_monthly_expense) {
-    let get_total_monthly_expense = total_monthly_expense;
     const income_total = parseFloat(document.getElementById('income').value);
-    const newBalance = income_total - get_total_monthly_expense;
+    //error handle for negative input of Income
+    const newBalance = income_total - total_monthly_expense;
     return newBalance;
 }
 document.getElementById('calculate_button').addEventListener('click', function () {
@@ -22,6 +22,10 @@ document.getElementById('calculate_button').addEventListener('click', function (
 
     // total balance function call
     const all_total_balance = total_balance(total_monthly_expense);
+    //negative income error handle
+    if (all_total_balance < 0) {
+        return alert('Salary is less than 0');
+    }
     if (total_monthly_expense > all_total_balance) {
         document.getElementById('notification_message').style.display = 'block';
         return alert('Salary is less than cost');
