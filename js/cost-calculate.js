@@ -20,17 +20,25 @@ document.getElementById('calculate_button').addEventListener('click', function (
     const clothes_monthly_expense = monthly_cost('clothes');
     const total_monthly_expense = food_monthly_expense + rent_monthly_expense + clothes_monthly_expense;
 
+    // total balance function call
+    const all_total_balance = total_balance(total_monthly_expense);
+    if (total_monthly_expense > all_total_balance) {
+        document.getElementById('notification_message').style.display = 'block';
+        return alert('Salary is less than cost');
+    }
+
+
     //total cost 
     let total_cost = document.getElementById('total_expense');
     let total_cost_price = parseFloat(total_cost.innerText);
-    total_cost.innerText = total_monthly_expense;
 
-    // total balance function call
-    const all_total_balance = total_balance(total_monthly_expense);
 
-    //where to show balance
     let balance_total = document.getElementById('balance');
     let balance_price = parseFloat(balance_total.innerText);
+
+
+    //where to show balance
+    total_cost.innerText = total_monthly_expense;
     balance_total.innerText = all_total_balance;
 })
 //percentage
@@ -39,7 +47,16 @@ document.getElementById('save_button').addEventListener('click', function () {
     let balance_price = parseFloat(balance_total.innerText);
     //saving ammount
     const percentage_number = parseFloat(document.getElementById('save_input').value);
-    const percentage = balance_price / percentage_number;
+    const percentage = (balance_price * percentage_number) / 100;
+
+    //error for negative input in saving percentage
+    if (percentage < 0) {
+        return alert('Do not input minus number');
+    }
+    if (percentage > balance_price) {
+        return alert('Saving is greatert than remaining balance');
+    }
+
 
     //where to show saving amount
     let saving_amount_balance = document.getElementById('saving_amount');

@@ -35,7 +35,7 @@
                         <div class="col-sm-4 text-end fs-5">
                             <p>Income:</p>
                         </div>
-                        <div class=" col-sm-8"><input id="income" type="number" placeholder="10000"></div>
+                        <div class=" col-sm-8"><input id="income" value="0" type="number" placeholder="10000"></div>
                     </div>
 
                     <h3 class="text-center">Expenses</h3>
@@ -45,7 +45,8 @@
                         <div class="col-sm-4 text-end fs-5">
                             <p>Food:</p>
                         </div>
-                        <div class=" col-sm-8"><input type="number" id="food_expense" placeholder="3000"></div>
+                        <div class=" col-sm-8"><input value="0" type="number" id="food_expense" placeholder="3000">
+                        </div>
                     </div>
 
                     <!-- rent expense field -->
@@ -53,7 +54,8 @@
                         <div class="col-sm-4 text-end fs-5">
                             <p>Rent:</p>
                         </div>
-                        <div class=" col-sm-8"><input type="number" id="rent_expense" placeholder="2000"></div>
+                        <div class=" col-sm-8"><input value="0" type="number" id="rent_expense" placeholder="2000">
+                        </div>
                     </div>
 
                     <!-- clothes expense field -->
@@ -61,7 +63,8 @@
                         <div class="col-sm-4 text-end fs-5">
                             <p>Clothes:</p>
                         </div>
-                        <div class=" col-sm-8"><input type="number" id="clothes_expense" placeholder="500"></div>
+                        <div class=" col-sm-8"><input value="0" type="number" id="clothes_expense" placeholder="500">
+                        </div>
                     </div>
 
                     <!-- calculate button field -->
@@ -74,8 +77,15 @@
                     </div>
 
                     <div>
-                        <p class="fs-5 fw-bold text-center mt-3">Total Expenses:<span id="total_expense">4500</span></p>
-                        <p class="fs-5 fw-bold text-center mb-3">Balance:<span id="balance">5500</span></p>
+                        <p class="fs-5 fw-bold text-center mt-3">Total Expenses:<span id="total_expense">0</span></p>
+                        <p class="fs-5 fw-bold text-center mb-3">Balance:<span id="balance">0</span></p>
+                    </div>
+
+                    <div id="notification_message">
+                        <p id="notification_fail" class="notify text-center">❌ Your Income is Less
+                            Than
+                            Your Cost
+                        </p>
                     </div>
 
                     <div class="row">
