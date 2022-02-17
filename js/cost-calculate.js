@@ -29,6 +29,7 @@ document.getElementById('calculate_button').addEventListener('click', function (
     let balance_total = document.getElementById('balance');
     let balance_price = parseFloat(balance_total.innerText);
     balance_price = 0;
+    //where to show balance
     balance_total.innerText = balance_price + all_total_balance;
 })
 //percentage
@@ -38,6 +39,11 @@ document.getElementById('save_button').addEventListener('click', function () {
     //saving ammount
     const percentage_number = parseFloat(document.getElementById('save_input').value);
     const percentage = balance_price / percentage_number;
-    console.log(percentage);
+
+    //where to show saving amount
+    let saving_amount_balance = document.getElementById('saving_amount');
+    let saving_amount_total = parseFloat(saving_amount_balance.innerText);
+    saving_amount_balance.innerText = percentage;
+
 
 })
